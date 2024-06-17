@@ -46,3 +46,26 @@ def reverse_string_builder(string):
     return ''.join(reversed_text_builder)
 
 print(reverse_string_builder('anotherexampleinabetterperformanceconsideringthememory'))
+
+
+# follow up: solve the question in-place (not adding extra memory)
+
+def reverse_string_in_place(s):
+    # edge cases:
+    if len(s) == 0:
+        return None
+    elif len(s) == 1:
+        return s
+    
+    left = 0
+    right = len(s) - 1
+
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+    
+    return s
+
+print(reverse_string(['w', 'e', 'l', 'l']))
+print(reverse_string(['a', 'm', 'a', 'n', 'd', 'h', 'a']))
