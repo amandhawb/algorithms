@@ -31,6 +31,22 @@ def unique_number_of_occurrences(arr):
             counter.add(value)
     return True
 
+# other way to solve:
+def unique_number_of_occurrences(arr):
+    hash_map = {}
+    for num in arr:
+        if num in hash_map:
+            hash_map[num] += 1
+        else:
+            hash_map[num] = 1
+
+    set_values = set(hash_map.values()) # it will remove duplicates
+
+    if len(set_values) == len(hash_map.keys()):
+        return True
+    else:
+        return False
+
 print(unique_number_of_occurrences([1,2,2,1,1,3])) # True
 print(unique_number_of_occurrences([1,2])) # False
 print(unique_number_of_occurrences([-3,0,1,-3,1,1,1,-3,10,0])) # True
