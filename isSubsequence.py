@@ -28,3 +28,19 @@ def isSubsequence(s, t):
 print(isSubsequence('adc', 'ajkdoc')) # True
 print(isSubsequence('poe', 'ekpo')) # False
 print(isSubsequence('a', 'defghi')) # False
+
+
+# New way to solve on July/1/2024:
+
+def isSubsequenceNew(s, t):
+    pointer_s = 0
+
+    for letter in t:
+        if letter == s[pointer_s]:
+            pointer_s += 1
+    
+    return pointer_s == len(s)
+
+print(isSubsequenceNew('adc', 'ajkdoc')) # True
+print(isSubsequenceNew('poe', 'ekpo')) # False
+print(isSubsequenceNew('a', 'defghi')) # False
