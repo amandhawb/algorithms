@@ -2,21 +2,25 @@
 # We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
 # You must solve this problem without using the library's sort function.
 
-def sort_colors(colors):
+def sort_colors(nums):
     left = 0
-    right = len(colors) -1
+    right = len(nums) -1
     middle = 0
 
     while middle <= right:
-        if colors[left] > colors[middle]:
-            colors[left], colors[middle] = colors[middle], colors[left]
-            left += 1
-        elif colors[right] < colors[middle]:
-            colors[right], colors[middle] = colors[middle], colors[right]
+        if nums[middle] == 2:
+            nums[right], nums[middle] = nums[middle], nums[right]
             right -= 1
-        middle += 1
-    
-    return colors
+        elif nums[middle] == 1:
+            middle += 1
+        elif nums[middle] == 0:
+            nums[left], nums[middle] = nums[middle], nums[left]
+            left += 1
+            middle += 1
 
-#print(sort_colors([2,0,1]))
+    return nums
+
+print(sort_colors([2,0,1]))
 print(sort_colors([2,0,2,1,1,0]))
+print(sort_colors([2,1,2,0,0,1]))
+print(sort_colors([1,2,0]))
