@@ -6,11 +6,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
-# recursive:
 def is_leaf(node):
     if node is not None and node.left is None and node.right is None:
         return node
-
+    
+# recursive:
 def sum_of_left_leaves(root):
     if root is None:
         return 0
