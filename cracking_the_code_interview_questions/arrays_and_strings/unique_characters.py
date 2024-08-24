@@ -14,7 +14,6 @@ print(unique_characters('')) # true
 
 # What if you can not use additional data structures?
 def unique_characters_in_place(str):
-    # left_pointer = 0
     right_pointer = len(str) - 1
 
     for i in range(len(str)):
