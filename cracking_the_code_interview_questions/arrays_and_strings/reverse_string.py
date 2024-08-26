@@ -1,4 +1,6 @@
-# Write a code to reverse a C-Style string (C-String means that "abcd" is represented as five characters, including the null character.)
+# Write a code to reverse a string
+def reverse_string(text):
+    return text[::-1] # slice notation [start:stop:step] allows me to specify a step value of -1, which reverses the string.
 
-def reverse_string(str):
-    pass
+print(reverse_string('hello'))
+print(reverse_string('amandha'))
