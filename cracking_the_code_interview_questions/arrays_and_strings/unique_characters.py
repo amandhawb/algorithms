@@ -13,16 +13,15 @@ print(unique_characters('code')) # true
 print(unique_characters('')) # true
 
 # What if you can not use additional data structures?
-def unique_characters_in_place(str):
-    right_pointer = len(str) - 1
+def unique_characters_no_extra_space(s):
+    s_length = len(s)
 
-    for i in range(len(str)):
-        if str[i] != str[right_pointer]:
-            right_pointer -= 1
-        else:
-            return False
+    for i in range(s_length):
+        for j in range(i + 1, s_length):
+            if s[i] == s[j]:
+                return False
     return True
 
-print(unique_characters_in_place('amandha')) # false
-print(unique_characters_in_place('code')) # true
-print(unique_characters_in_place('')) # true
+print(unique_characters_no_extra_space('amandh')) # false
+print(unique_characters_no_extra_space('code')) # true
+print(unique_characters_no_extra_space('')) # true
