@@ -65,5 +65,12 @@ matrix2 = [
     [2, False, True, False]
 ]
 
+matrix3 = [
+    ['-', 0, 1],
+    [0, False, True],
+    [1, True, False]
+]
+
 print(finding_cycles(matrix1)) # [[0,2,1]]
 print(finding_cycles(matrix2)) # []
+print(finding_cycles(matrix3)) # [[0,1]]
