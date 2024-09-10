@@ -34,16 +34,13 @@ def finding_cycles(issues):
             cycle_start = recursion_stack.index(issue)
             cycles.append(recursion_stack[cycle_start:])
             return True
-        if issue in already_seen:
-            return False
+        
         already_seen.add(issue)
         recursion_stack.append(issue)
 
         for blocker in issues_hash_map[issue]:
             if dfs(blocker, recursion_stack):
                 return True
-        
-        recursion_stack.pop()
         return False
     
     for issue in range(num_of_issues):
@@ -71,6 +68,32 @@ matrix3 = [
     [1, True, False]
 ]
 
+matrix4 = [
+    ['-', 0, 1, 2],
+    [0, False, False, False],
+    [1, True, False, False],
+    [2, False, True, False]
+]
+
+matrix5 = [
+    ['-', 0, 1, 2, 3],
+    [0, False, False, False, True], 
+    [1, True, False, False, False], 
+    [2, False, True, False, False], 
+    [3, False, False, True, False]
+]
+
+matrix6 = [
+    ['-', 0, 1, 2, 3],
+    [0, False, False, True, False],
+    [1, False, False, False, True],
+    [2, True, False, False, False],
+    [3, False, True, False, False]
+]
+
 print(finding_cycles(matrix1)) # [[0,2,1]]
 print(finding_cycles(matrix2)) # []
 print(finding_cycles(matrix3)) # [[0,1]]
+print(finding_cycles(matrix4)) # []
+print(finding_cycles(matrix5)) # [[0,3,2,1]]
+print(finding_cycles(matrix6)) # [[0,2], [1,3]]
