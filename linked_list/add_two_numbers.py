@@ -23,11 +23,29 @@ class Solution:
             val = val % 10
             curr.next = ListNode(val)
 
+            l1 = l1.next
+            l2 = l2.next
             curr = curr.next
-            l1 = l1.next if l1 else None
-            l2 = l2.next if l2 else None
-
+        
         return temp.next
 
+# test case setup
+l1 = ListNode(2)
+l1.next = ListNode(4)
+l1.next.next = ListNode(3)
+l2 = ListNode(5)
+l2.next = ListNode(6)
+l2.next.next = ListNode(4)
 
+solution = Solution()
+result = solution.addTwoNumbers(l1,l2)
 
+def print_linked_list(node):
+    res = []
+    while node:
+        res.append(str(node.val))
+        node = node.next
+    print(" -> ".join(res))
+
+print("RESULT:")
+print_linked_list(result)
