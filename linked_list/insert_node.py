@@ -13,6 +13,8 @@ class SinglyLinkedList:
         self.val = val
         self.next = None
 
+# time = O(n) where n is the last element in the linked list
+# space = O(1) --> curr variable is only holding a reference to the current node during traversal, not the entire list
 def insert_node_at_position(head, data, position):
     new_node = SinglyLinkedList(data)
     if position == 0:
