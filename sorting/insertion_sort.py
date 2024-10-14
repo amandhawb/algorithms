@@ -3,7 +3,7 @@
 # Given a sorted list with an unsorted number e in the rightmost cell, can you write some simple code to insert e into the array so that it remains sorted?
 # Since this is a learning exercise, it won't be the most efficient way of performing the insertion. It will instead demonstrate the brute-force method in detail.
 
-# time = O(n) when the array is sorted from the end until arr[-1].
+# time = O(n) when the array is sorted from the end until arr[-1] and O(nˆ2) when it is not.
 # space = O(1)
 def insertion_sort(arr):
     size = len(arr)
