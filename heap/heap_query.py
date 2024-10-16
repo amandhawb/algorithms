@@ -7,8 +7,10 @@
 # "3" - Print the minimum of all the elements in the heap.
 # NOTE: It is guaranteed that the element to be deleted will be there in the heap. Also, at any instant, only distinct elements will be in the heap.
 
-import heapq
 
+# time = O(n) -> because of .remove() and .heapify() and O(log n) for insertion
+# space = O(n) -> where n is the number of elements in the heap
+import heapq
 n = int(input())
 my_heap = []
 
