@@ -20,7 +20,7 @@ def kSmallestPairs(nums1, nums2, k):
     heapq.heappush(heap, (nums1[0] + nums2[0], 0, 0))
     visited.add((0,0))
 
-    while k and heap:
+    while k:
         _, i, j = heapq.heappop(heap)
         response.append([nums1[i], nums2[j]])
 
